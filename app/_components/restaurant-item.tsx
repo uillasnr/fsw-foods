@@ -6,17 +6,18 @@ import Image from "next/image";
 import { formatCurrency } from "../_helpers/price";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { cn } from "../_lib/utils";
 
 interface RestaurantItemProps {
   restaurant: Restaurant;
-  /*  className?: string;
-  userFavoriteRestaurants: UserFavoriteRestaurant[]; */
+  className?: string;
+  /* userFavoriteRestaurants: UserFavoriteRestaurant[];  */
 }
 
 const RestaurantItem = ({
   restaurant,
-  /*  className,
-  userFavoriteRestaurants, */
+  className,
+  /*  userFavoriteRestaurants, */
 }: RestaurantItemProps) => {
   /*  const { data } = useSession();
   const isFavorite = userFavoriteRestaurants.some(
@@ -38,7 +39,7 @@ const RestaurantItem = ({
   }; */
 
   return (
-    <div className="min-w-[266px] max-w-[266px]">
+    <div className={cn("min-w-[266px] max-w-[266px]", className)}>
       <div className="w-full space-y-3">
         {/* IMAGEM */}
         <div className="relative h-[136px] w-full">
@@ -46,6 +47,7 @@ const RestaurantItem = ({
             <Image
               src={restaurant.imageUrl}
               fill
+              sizes="100%"
               className="rounded-lg object-cover"
               alt={restaurant.name}
             />
@@ -56,12 +58,15 @@ const RestaurantItem = ({
             <span className="text-xs font-semibold">5.0</span>
           </div>
 
+          {/*  {data?.user.id && ( */}
           <Button
             size="icon"
-            className={`"bg-primary absolute right-2 top-2 h-7 w-7 rounded-full  bg-gray-700 `}
+            className={`absolute right-2 top-2 h-7 w-7 rounded-full bg-gray-700 `}
+            /*  onClick={handleFavoriteClick} */
           >
             <HeartIcon size={16} className="fill-white" />
           </Button>
+          {/*    )} */}
         </div>
         {/* TEXTO */}
         <div>
