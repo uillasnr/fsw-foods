@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Restaurant } from "@prisma/client";
 import { searchForRestaurants } from "./_actions/search";
 
-const Rwstaurants = () => {
+const Restaurants = () => {
   const searchParams = useSearchParams();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
@@ -46,4 +46,4 @@ const Rwstaurants = () => {
   );
 };
 
-export default Rwstaurants;
+export default Restaurants;
