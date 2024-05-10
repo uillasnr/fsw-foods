@@ -8,6 +8,7 @@ import { db } from "./_lib/prisma";
 import PromoBanner from "./_components/promo-banner";
 import RestaurantList from "./_components/restaurante-list";
 import Link from "next/link";
+import Image from "next/image";
 
 const Home = async () => {
   const products = await db.product.findMany({
@@ -29,15 +30,37 @@ const Home = async () => {
   return (
     <>
       <Header />
-      <div className="px-5 pt-6">
-        <Search />
+      <div className="flex-row items-center bg-none px-5 pt-6 md:flex md:h-[350px] md:bg-[#EA1D2C] md:pt-0">
+        <div className="mt-5 flex flex-row items-center justify-between md:w-full lg:gap-20 xl:gap-48 ">
+          <div className="w-full flex-col justify-center  md:w-2/4">
+            <h1 className="text-3xl font-extrabold text-white lg:text-4xl xl:text-5xl">
+              Está com fome?
+            </h1>
+            <p className="mb-2 text-sm text-muted-foreground text-white">
+              Com apenas alguns cliques, encontre refeições acessíveis perto de
+              você.
+            </p>
+
+            <Search />
+          </div>
+
+          <div className="hidden pr-28 md:flex">
+            <Image
+              src="/pngwing.com.png"
+              alt="Foods"
+              height={300}
+              width={300}
+              className="object-cover "
+            />
+          </div>
+        </div>
       </div>
 
       <div className="px-5 pt-6">
         <CategoryList />
       </div>
 
-      <div className="px-5 pt-6">
+      <div className="w-full px-5 pt-6 md:hidden">
         <PromoBanner
           src="/promo-banner-01.png"
           alt="Até 30% de desconto em pizzas!"
@@ -62,10 +85,16 @@ const Home = async () => {
         <ProductList products={products} />
       </div>
 
-      <div className="px-5 pt-6">
+      <div className="justify-between gap-4 px-6 pt-6 md:flex">
+        <PromoBanner
+          src="/promo-banner-01.png"
+          alt="Até 30% de desconto em pizzas!"
+          className="mt-4 hidden  w-full md:mt-0 md:block md:w-1/2"
+        />
         <PromoBanner
           src="/promo-banner-02.png"
           alt="A partir de R$17,90 em lanches"
+          className="w-full md:w-1/2 "
         />
       </div>
 
