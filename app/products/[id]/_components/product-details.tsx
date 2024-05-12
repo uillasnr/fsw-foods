@@ -132,7 +132,7 @@ const ProductDetails = ({
             <Button
               size="icon"
               variant="ghost"
-              className="border border-solid border-muted-foreground"
+              className="border border-solid border-muted-foreground "
               onClick={handleDecreaseQuantityClick}
             >
               <ChevronLeftIcon />
@@ -175,7 +175,7 @@ const ProductDetails = ({
             <SheetTitle className="text-left">Sacola</SheetTitle>
           </SheetHeader>
 
-          <Cart />
+          <Cart setIsOpen={setIsCartOpen} />
         </SheetContent>
       </Sheet>
 

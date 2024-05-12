@@ -19,9 +19,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "./ui/alert-dialog";
-//import { toast } from "sonner";
-//import { useRouter } from "next/navigation";
+
+import { useRouter } from "next/navigation";
 import { createOrder } from "./_actions/order";
+import { toast } from "sonner";
 
 interface CartProps {
   // eslint-disable-next-line no-unused-vars
@@ -29,7 +30,7 @@ interface CartProps {
 }
 
 const Cart = ({ setIsOpen }: CartProps) => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const [isSubmitLoading, setIsSubmitLoading] = useState(false);
   const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
@@ -73,13 +74,15 @@ const Cart = ({ setIsOpen }: CartProps) => {
       clearCart();
       setIsOpen(false);
 
-      /*  toast("Pedido finalizado com sucesso!", {
+      toast("Pedido finalizado com sucesso!", {
         description: "Você pode acompanhá-lo na tela dos seus pedidos.",
         action: {
           label: "Meus Pedidos",
           onClick: () => router.push("/my-orders"),
         },
-      }); */
+      });
+
+      router.push("/");
     } catch (error) {
       console.error(error);
     } finally {
