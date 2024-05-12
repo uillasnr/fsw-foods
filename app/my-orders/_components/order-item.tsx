@@ -41,6 +41,7 @@ const getOrderStatusLabel = (status: OrderStatus) => {
 };
 
 const OrderItem = ({ order }: OrderItemProps) => {
+  /* REFAZER O PEDIDO */
   const { addProductToCart } = useContext(CartContext);
 
   const router = useRouter();
@@ -58,6 +59,7 @@ const OrderItem = ({ order }: OrderItemProps) => {
 
     router.push(`/restaurants/${order.restaurantId}`);
   };
+
   return (
     <Card>
       <CardContent className="p-5">
