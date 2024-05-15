@@ -25,10 +25,13 @@ const Search = () => {
   };
 
   return (
-    <form className="flex gap-2" onSubmit={handleSearchSubmit}>
+    <form
+      className="mt-[-80px] flex gap-2 md:mt-3"
+      onSubmit={handleSearchSubmit}
+    >
       <Input
         placeholder="Buscar restaurantes"
-        className="border-none"
+        className="border-none "
         onChange={handleChange}
         value={search}
       />

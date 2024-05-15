@@ -31,7 +31,7 @@ const Home = async () => {
     <>
       <Header />
       <div className="flex-row items-center bg-none px-5 pt-6 md:flex md:h-[350px] md:bg-[#EA1D2C] md:pt-0">
-        <div className="mt-5 flex flex-row items-center justify-between md:w-full lg:gap-20 xl:gap-48 ">
+        <div className="mt-0 flex flex-row items-center justify-between md:mt-5 md:w-full lg:gap-20 xl:gap-48 ">
           <div className="w-full flex-col justify-center  md:w-2/4">
             <h1 className="text-3xl font-extrabold text-white lg:text-4xl xl:text-5xl">
               Está com fome?
@@ -44,7 +44,7 @@ const Home = async () => {
             <Search />
           </div>
 
-          <div className="hidden pr-28 md:flex">
+          <div className="hidden pr-0 md:flex lg:pr-28">
             <Image
               src="/pngwing.com.png"
               alt="Foods"
