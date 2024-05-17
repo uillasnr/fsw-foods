@@ -60,13 +60,13 @@ O projeto está em desenvolvimento.
 - [x] Os usuários devem poder pesquisar restaurantes pelo nome.
 - [x] Os usuários devem poder fazer login utilizando suas contas do Google.
 - [x] Os usuários devem poder fazer logout de suas contas do Google.
+- [x] suporte para diferentes tamanhos de tela e dispositivos.
 
 ### Requisitos Não-Funcionais (RNF)
 
 - [x] O sistema deve ser capaz de lidar com um grande número de usuários simultaneamente.
 - [x] O tempo de resposta do sistema deve ser rápido para garantir uma experiência de usuário fluida.
 - [x] A interface do usuário deve ser intuitiva e fácil de usar em dispositivos móveis.
-- [ ] Deve haver suporte para diferentes tamanhos de tela e dispositivos.
 - [x] O sistema deve ser dimensionado para lidar com um aumento na demanda à medida que mais usuários se registram e fazem pedidos.
 - [x] O aplicativo deve ser compatível com uma variedade de dispositivos e sistemas operacionais móveis, como iOS e Android.
 
@@ -215,8 +215,9 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
   </sub>
 </a>
 
-Feito com ❤️ por uillas <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" height="16px" /> Entre em contato!
+Feito por Uillas <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" height="16px" /> Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/uillasnr)](https://www.linkedin.com/in/uillasnr)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-%23333?style=flat-square&logo=gmail&logoColor=white&link=mailto:wiliasreis@hotmail.com)](wiliasreis@hotmail.com)
+[![WhatsApp Badge](https://img.shields.io/badge/WhatsApp-%25D366.svg?style=flat-square&logo=WhatsApp&logoColor=white&link=https://wa.me/551234567890)](https://wa.me/5511991654732)
 
