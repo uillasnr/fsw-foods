@@ -208,7 +208,7 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
 <a href="https://github.com/uillasnr">
   <img 
     style="border-radius: 50%;" 
-    src="https://i.imgur.com/TKbHPcH.jpg" 
+    src="avatars.githubusercontent.com/u/118194933?v=4" 
     width="100px;" 
     alt="Visualização da foto do uillas nascimento reis"
   />
@@ -218,7 +218,7 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
   </sub>
 </a>
 
-Feito com ❤️ por uillas <img src="https://avatars.githubusercontent.com/u/118194933?v=4" height="16px" /> Entre em contato!
+Feito com ❤️ por uillas <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" height="16px" /> Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/uillasnr)](https://www.linkedin.com/in/uillasnr)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-%23333?style=flat-square&logo=gmail&logoColor=white&link=mailto:wiliasreis@hotmail.com)](wiliasreis@hotmail.com)
