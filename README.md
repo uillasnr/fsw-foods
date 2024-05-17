@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./public/logo.svg" alt="Logo do Projeto">
+  <img src="./public/logo.png" alt="Logo do Projeto">
 </h1>
 
 ## <img src="https://em-content.zobj.net/source/apple/391/page-with-curl_1f4c3.png" height="24px" /> Roteiro
@@ -191,9 +191,6 @@ ou
 pnpm run dev
 ```
 
-## <img src="https://em-content.zobj.net/source/apple/391/linked-paperclips_1f587-fe0f.png" height="24px" /> Contribuindo
-
-Você quer fazer parte desse projeto? Leia o arquivo [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## <img src="https://em-content.zobj.net/source/apple/391/bookmark_1f516.png" height="24px" /> Layout
 
@@ -208,7 +205,7 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
 <a href="https://github.com/uillasnr">
   <img 
     style="border-radius: 50%;" 
-    src="avatars.githubusercontent.com/u/118194933?v=4" 
+    src="https://media.licdn.com/dms/image/D4D03AQFE8DxQtLa4vQ/profile-displayphoto-shrink_200_200/0/1692109078506?e=1721260800&v=beta&t=DBUuY1w2veh5PhEZyRzeGVT1w16IY1ja-H0dgsYcvvA" 
     width="100px;" 
     alt="Visualização da foto do uillas nascimento reis"
   />
