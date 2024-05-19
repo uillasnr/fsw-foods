@@ -30,18 +30,20 @@ const Home = async () => {
   return (
     <>
       <Header />
-      <div className="flex-row items-center bg-none px-5 pt-6 md:flex md:h-[350px] md:bg-[#EA1D2C] md:pt-0">
-        <div className="mt-0 flex flex-row items-center justify-between md:mt-5 md:w-full lg:gap-20 xl:gap-48 ">
-          <div className="w-full flex-col justify-center  md:w-2/4">
-            <h1 className="text-3xl font-extrabold text-white lg:text-4xl xl:text-5xl">
+      <div className="flex-row items-center px-6 py-2 pt-5 md:flex md:h-[350px] md:bg-[#EA1D2C] md:py-2">
+        <div className=" flex flex-row items-center justify-between md:mt-5 md:w-full lg:gap-20 xl:gap-48 ">
+          <div className="w-full flex-col justify-center md:w-2/4">
+            <h1 className="hidden text-3xl font-extrabold text-white md:block lg:text-4xl xl:text-5xl">
               Está com fome?
             </h1>
-            <p className="mb-2 text-sm text-muted-foreground text-white">
+            <p className="mb-2 hidden text-sm text-muted-foreground text-white md:block">
               Com apenas alguns cliques, encontre refeições acessíveis perto de
               você.
             </p>
 
-            <Search />
+            <div className="flex h-0 w-full items-center justify-center rounded-md bg-white p-0 md:h-24 md:w-full md:p-6">
+              <Search isHomePage={true} />
+            </div>
           </div>
 
           <div className="hidden pr-0 md:flex lg:pr-28">
@@ -56,7 +58,7 @@ const Home = async () => {
         </div>
       </div>
 
-      <div className="px-5 pt-6">
+      <div className="px-5 pt-5">
         <CategoryList />
       </div>
 
