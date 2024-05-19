@@ -154,7 +154,7 @@ const ProductDetails = ({
           <p className="text-xs text-muted-foreground">{product.description}</p>
         </div>
 
-        <div className="mt-6 space-y-3">
+        <div className="mt-6 block space-y-3 md:hidden">
           <h3 className="px-5 font-semibold">Sucos</h3>
           <ProductList products={complementaryProducts} />
         </div>
