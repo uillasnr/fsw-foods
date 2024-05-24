@@ -4,6 +4,9 @@ import { authOptions } from "../_lib/auth";
 import { redirect } from "next/navigation";
 import Header from "../_components/header";
 import OrderItem from "./_components/order-item";
+import { Button } from "../_components/ui/button";
+import Link from "next/link";
+import { ChevronLeftIcon } from "lucide-react";
 
 const MyOrdersPage = async () => {
   const session = await getServerSession(authOptions);
@@ -31,7 +34,22 @@ const MyOrdersPage = async () => {
       <Header />
 
       <div className="px-5 py-6">
-        <h2 className="pb-6 text-lg font-semibold">Meus Pedidos</h2>
+        <div className="mb-6 inline-flex items-center  justify-center">
+          <div className="hidden md:block">
+            <Button
+              className=" rounded-full 
+            border border-solid border-muted-foreground bg-[#F4F4F4]  text-foreground shadow-sm"
+              size="icon"
+              asChild
+            >
+              <Link href="/">
+                <ChevronLeftIcon />
+              </Link>
+            </Button>
+          </div>
+
+          <h2 className="pl-0 text-lg font-semibold md:pl-4 ">Meus Pedidos</h2>
+        </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           {orders.map((order) => (
