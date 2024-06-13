@@ -66,7 +66,7 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
         </div>
 
         <div className="hidden md:block md:px-5">
-          <h3 className="px-5 font-semibold">Sucos</h3>
+          <h3 className="px-5 font-semibold">Recomendados</h3>
           <ProductList products={juices} />
         </div>
       </div>
