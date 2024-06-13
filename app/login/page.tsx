@@ -7,7 +7,7 @@ import Link from "next/link";
 const Login = () => {
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
-      <div className="hidden w-full items-center justify-center bg-red-700 p-6 md:flex md:w-1/2">
+      <div className="hidden w-full items-center justify-center bg-[#e6232d] p-6 md:flex md:w-1/2">
         <div className="flex w-full max-w-md items-center justify-center space-y-8">
           <div>
             <Image

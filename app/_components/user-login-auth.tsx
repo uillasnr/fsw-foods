@@ -12,10 +12,26 @@ const UserLoginAuth = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errors, setErrors] = useState<{
+    email?: string;
+    password?: string;
+    general?: string;
+  }>({});
   const { push } = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const newErrors: { email?: string; password?: string; general?: string } =
+      {};
+
+    if (!email) newErrors.email = "Email é obrigatório";
+    if (!password) newErrors.password = "Senha é obrigatória";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     setIsLoading(true);
 
     const result = await signIn("credentials", {
@@ -25,7 +41,10 @@ const UserLoginAuth = () => {
       callbackUrl: "/",
     });
 
+    setIsLoading(false);
+
     if (result?.error) {
+      setErrors({ ...errors, general: "Dados inválidos" });
     } else {
       push("/");
     }
@@ -37,13 +56,17 @@ const UserLoginAuth = () => {
 
   return (
     <div>
-      <form className="px-5 lg:px-10 " onSubmit={handleSubmit}>
-        <div className="-space-y-px   rounded-md shadow-sm">
+      {errors.general && (
+        <div className="my-2 text-center text-sm text-red-500">
+          {errors.general}
+        </div>
+      )}
+      <form className="px-5 lg:px-10" onSubmit={handleSubmit}>
+        <div className="-space-y-px rounded-md shadow-sm">
           <div>
             <label htmlFor="email" className="sr-only">
               Endereço de email
             </label>
-
             <Input
               id="email"
               name="email"
@@ -55,12 +78,14 @@ const UserLoginAuth = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            {errors.email && (
+              <span className="text-xs text-red-500">{errors.email}</span>
+            )}
           </div>
           <div>
             <label htmlFor="password" className="sr-only">
               Senha
             </label>
-
             <Input
               id="password"
               name="password"
@@ -71,8 +96,12 @@ const UserLoginAuth = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {errors.password && (
+              <span className="text-xs text-red-500">{errors.password}</span>
+            )}
           </div>
         </div>
+
         <Link href="/Register">
           <p className="py-2 text-xs text-muted-foreground hover:text-primary">
             Criar cadastro
@@ -82,7 +111,7 @@ const UserLoginAuth = () => {
         <div className="flex space-x-4">
           <Button
             type="submit"
-            className="group relative flex w-1/2 justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-red-400 "
+            className="group relative flex w-1/2 justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-red-400"
           >
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
