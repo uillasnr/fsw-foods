@@ -8,7 +8,6 @@ import { Button } from "./ui/button";
 
 import { OrderStatus } from "@prisma/client";
 import { useSession } from "next-auth/react";
-import { Loader2 } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,6 +22,7 @@ import {
 import { useRouter } from "next/navigation";
 import { createOrder } from "./_actions/order";
 import { toast } from "sonner";
+import { Icons } from "./icons";
 
 interface CartProps {
   // eslint-disable-next-line no-unused-vars
@@ -31,9 +31,9 @@ interface CartProps {
 
 const Cart = ({ setIsOpen }: CartProps) => {
   const router = useRouter();
-
   const [isSubmitLoading, setIsSubmitLoading] = useState(false);
   const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
+  const [isLoginDialogOpen, setIsLoginDialogOpen] = useState(false);
 
   const { data } = useSession();
 
@@ -41,8 +41,10 @@ const Cart = ({ setIsOpen }: CartProps) => {
     useContext(CartContext);
 
   const handleFinishOrderClick = async () => {
-    if (!data?.user) return;
-
+    if (!data?.user) {
+      setIsLoginDialogOpen(true);
+      return;
+    }
     const restaurant = products[0].restaurant;
 
     try {
@@ -88,6 +90,11 @@ const Cart = ({ setIsOpen }: CartProps) => {
     } finally {
       setIsSubmitLoading(false);
     }
+  };
+
+  const handleContinueShoppingClick = () => {
+    setIsOpen(false);
+    router.push("/");
   };
 
   return (
@@ -167,16 +174,50 @@ const Cart = ({ setIsOpen }: CartProps) => {
               da nossa plataforma.
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancelar</AlertDialogCancel>
+
+          <AlertDialogFooter className="flex gap-2 sm:justify-center md:justify-center lg:justify-center">
+            <AlertDialogCancel className="mt-0">Cancelar</AlertDialogCancel>
+
+            <Button
+              className="gap-2 border border-input hover:bg-red-400"
+              onClick={handleContinueShoppingClick}
+              variant="secondary"
+            >
+              Continuar Comprando
+            </Button>
+
             <AlertDialogAction
               onClick={handleFinishOrderClick}
               disabled={isSubmitLoading}
             >
               {isSubmitLoading && (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}
               Finalizar
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={isLoginDialogOpen} onOpenChange={setIsLoginDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-center">
+              {" "}
+              Você precisa estar logado para continuar.
+            </AlertDialogTitle>
+          </AlertDialogHeader>
+
+          <AlertDialogFooter className="flex gap-2 sm:justify-center md:justify-center lg:justify-center">
+            <AlertDialogCancel className="mt-0 w-full md:w-24">
+              Cancelar
+            </AlertDialogCancel>
+
+            <AlertDialogAction
+              className="w-full md:w-24"
+              onClick={() => router.push("/login")}
+            >
+              Login
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
