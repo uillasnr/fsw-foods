@@ -59,6 +59,12 @@ export const authOptions: AuthOptions = {
 
       return token;
     },
+    async session({ session, token }) {
+      if (token) {
+        session.user = { ...session.user, id: token.id as string | undefined };
+      }
+      return session;
+    },
   },
   pages: {
     signIn: "/login",
