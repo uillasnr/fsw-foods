@@ -82,6 +82,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
           label: "Meus Pedidos",
           onClick: () => router.push("/my-orders"),
         },
+        duration: 10000,
       });
 
       router.push("/");
