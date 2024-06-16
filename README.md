@@ -19,8 +19,8 @@
 - [Licença](#licenca)
 
 <p align="center">
-  <img 
-    src="src="./public/FSW-food.png" 
+<img 
+    src="./public/FSW-food.png" 
     alt="Visualização do Layout do Projeto"
   />
 </p>
