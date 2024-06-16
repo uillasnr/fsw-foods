@@ -20,7 +20,7 @@
 
 <p align="center">
   <img 
-    src="https://i.imgur.com/5Qjr0N2.png" 
+    src="src="./public/FSW-food.png" 
     alt="Visualização do Layout do Projeto"
   />
 </p>
