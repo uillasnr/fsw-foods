@@ -17,7 +17,7 @@ const Home = async () => {
         gt: 0,
       },
     },
-    take: 10, //Pegar apenas 10 produtos
+    take: 15,
     include: {
       restaurant: {
         select: {
