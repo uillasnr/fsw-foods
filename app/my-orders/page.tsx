@@ -51,11 +51,19 @@ const MyOrdersPage = async () => {
           <h2 className="pl-0 text-lg font-semibold md:pl-4 ">Meus Pedidos</h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-          {orders.map((order) => (
-            <OrderItem key={order.id} order={order} />
-          ))}
-        </div>
+        {orders.length > 0 ? (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+            {orders.map((order) => (
+              <OrderItem key={order.id} order={order} />
+            ))}
+          </div>
+        ) : (
+          <div className="mt-64 flex flex-col items-center justify-center">
+            <h3 className="text-center font-medium">
+              Você não efetuou nenhum pedido.
+            </h3>
+          </div>
+        )}
       </div>
     </>
   );
