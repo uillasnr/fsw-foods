@@ -63,11 +63,18 @@ const OrderItem = ({ order }: OrderItemProps) => {
   return (
     <Card>
       <CardContent className="p-5">
-        <div
-          className={`w-fit rounded-full bg-[#EEEEEE] px-2 py-1 text-muted-foreground ${order.status !== "COMPLETED" && "bg-green-500 text-white"}`}
-        >
-          <span className="block text-xs font-semibold">
-            {getOrderStatusLabel(order.status)}
+        <div className="flex h-6 justify-between">
+          <div
+            className={`w-fit rounded-full bg-[#EEEEEE] px-2 py-1 text-muted-foreground ${order.status !== "COMPLETED" && "bg-green-500 text-white"}`}
+          >
+            <span className="block text-xs font-semibold">
+              {getOrderStatusLabel(order.status)}
+            </span>
+          </div>
+
+          <span className="flex w-20 justify-center text-center text-xs text-muted-foreground">
+            {new Date(order.createdAt).toLocaleDateString()}{" "}
+            {new Date(order.createdAt).toLocaleTimeString()}
           </span>
         </div>
 
