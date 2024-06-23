@@ -58,6 +58,9 @@ O projeto está em desenvolvimento.
 - [x] Os usuários devem poder remover restaurantes da lista de favoritos.
 - [x] Os usuários devem poder navegar por diferentes categorias de alimentos (por exemplo, pizza, hambúrgueres, comida chinesa).
 - [x] Os usuários devem poder pesquisar restaurantes pelo nome.
+- [x] Os usuários devem poder criar uma conta no sistema.
+- [x] Os usuários devem poder fazer login utilizando o cadastro criado.
+- [x] Os usuários devem poder fazer logout de suas contas criada.
 - [x] Os usuários devem poder fazer login utilizando suas contas do Google.
 - [x] Os usuários devem poder fazer logout de suas contas do Google.
 - [x] suporte para diferentes tamanhos de tela e dispositivos.
